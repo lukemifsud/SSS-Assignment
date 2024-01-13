@@ -1,3 +1,5 @@
+@extends('layouts.main')
+
 <h1> All Cars <h1>
 
 <a href="{{ route('cars.add') }}">Add Car</a>
