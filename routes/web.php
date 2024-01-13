@@ -20,16 +20,17 @@ Route::get('/', function () {
 //route for cars
 Route::get('/cars', function()
 {
-    return "<h1>All Cars</h1>";
-});
+    return view('cars.index');
+})->name('cars.index');
 
-Route::get('/cars/create', function()
+Route::get('/cars/add', function()
 {
-    return "<h1>Add new car</h1>";
-});
+    return view('cars.add');
+})->name('cars.add');
 
 //returns all Cars
 Route::get('/cars/all', function()
 {
-    return App\Models\Cars::all();
-});
+    $cars =  App\Models\Cars::all();
+    return view('cars.show', compact('cars'));
+})->name('cars.show');
