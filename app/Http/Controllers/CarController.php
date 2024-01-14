@@ -26,7 +26,8 @@ class CarController extends Controller
 
     public function add()
     {
-        return view('cars.add');
+        $manufacturers = Manufacturers::orderby('name')->pluck('name','id')->prepend('All Manufacturers', '');
+        return view('cars.add', compact('manufacturers'));
     }
 
     public function show($id)
