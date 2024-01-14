@@ -27,5 +27,5 @@ Route::get('/cars/add', [CarController::class, 'add'])->name('cars.add');
 
  
 
-//show all Cars
-Route::get('/cars/all', [CarController::class, 'show'])->name('cars.show');
+//show all Cars by id
+Route::get('/cars/{id}', [CarController::class, 'show'])->name('cars.show');
