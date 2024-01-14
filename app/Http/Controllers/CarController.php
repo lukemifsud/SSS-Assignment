@@ -42,7 +42,7 @@ class CarController extends Controller
             'model' => 'required',
             'year' => 'required',
             'salesperson_email' => 'required|email',
-            'manufacturers_id' => 'required|exists:manufacturers_id'
+            'manufacturers_id' => 'required|exists:manufacturers,id'
         ]);
 
         dd($request->all());
