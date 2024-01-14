@@ -11,6 +11,7 @@
               </div>           
               <div class="card-body">
                 <form action="{{ route('cars.store')}}" method="POST">
+                @csrf
                 @include('cars._form')
               </div>
             </div>
