@@ -22,13 +22,18 @@ Route::get('/', function () {
 Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
 
    
-   
+//route for create
 Route::get('/cars/add', [CarController::class, 'add'])->name('cars.add');
 
- 
+ //create new car
+Route::post('/cars', [CarController::class, 'store'])->name('cars.store');
 
 //show all Cars by id
 Route::get('/cars/{id}', [CarController::class, 'show'])->name('cars.show');
 
-//create new car
-Route::post('/cars', [CarController::class, 'store'])->name('cars.store');
+
+//display the edit contact form
+Route::get('/cars/{id}/edit', [CarController::class, 'edit'])->name('cars.edit');
+
+//update the car details (PUT request)
+Route::put('/cars/{id}', [CarController::class, 'update'])->name('cars.update');
