@@ -38,6 +38,13 @@ class CarController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'model' => 'required',
+            'year' => 'required',
+            'salesperson_email' => 'required|email',
+            'manufacturers_id' => 'required|exists:manufacturers_id'
+        ]);
+
         dd($request->all());
     }
 }
