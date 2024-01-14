@@ -45,7 +45,8 @@ class CarController extends Controller
             'manufacturers_id' => 'required|exists:manufacturers,id'
         ]);
 
-        dd($request->all());
+        Cars::create($request->all());
+        return redirect()->route('cars.index')->with('message', 'Car hase been added successfully');
     }
 }
 
