@@ -35,4 +35,10 @@ class CarController extends Controller
         $cars =  Cars::find($id);
         return view('cars.show', compact('cars'));
     }
+
+    public function store(Request $request)
+    {
+        dd($request->all());
+    }
 }
+
