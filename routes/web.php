@@ -37,3 +37,6 @@ Route::get('/cars/{id}/edit', [CarController::class, 'edit'])->name('cars.edit')
 
 //update the car details (PUT request)
 Route::put('/cars/{id}', [CarController::class, 'update'])->name('cars.update');
+
+//Delete the car
+Route::delete('/cars/{id}', [CarController::class, 'destroy'])->name('cars.destroy');
